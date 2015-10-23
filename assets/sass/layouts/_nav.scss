@@ -1,0 +1,39 @@
+.l-nav {
+  position: fixed;
+  top: 0;
+  z-index: 997;
+  @include span-columns(12);
+  min-height: $nav-height;
+  background-color: #fff;
+  border-bottom-color: rgba(0,0,0,0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
+
+  .l-nav--right {
+    z-index: 997;
+    @include span-columns(2 of 12);
+    min-height: $nav-height;
+  }
+
+  .l-nav--left {
+    @include span-columns(2 of 12);
+    min-height: $nav-height;
+  }
+
+  .l-nav--center {
+    @include span-columns(8 of 12);
+    min-height: $nav-height;
+  }
+
+  .l-nav__logo {
+    h1 {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 1.25em;
+      letter-spacing: 0.25em;
+    }
+  }
+}
+
+body {
+  padding-top: 65px;
+}
