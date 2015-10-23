@@ -1,21 +1,20 @@
 .dropdown {
-  // line-height: $base-line-height;
-  min-height: $nav-height;
-  position: absolute;
-  right: 25px;
+  max-height: $nav-height;
+  top: 0;
+  margin: auto;
 
   .dropdown-container {
     display: inline-block;
     position: relative;
-    // text-align: center;
+    text-align: left;
   }
 
   .dropdown-button {
-    min-height: $nav-height;
+    // min-height: $nav-height - 6;
     background: $dropdown-background;
     cursor: pointer;
     float: right;
-    line-height: $dropdown-height;
+    // line-height: $dropdown-height;
     margin: 0;
     position: relative;
     font-size: 1em;
