@@ -17,6 +17,7 @@
     "bourbon-neat": "^1.7.2",
     "jquery": "^2.1.4",
     "laravel-elixir": "^3.4.1",
+    "masonry-layout": "^3.3.2",
     "vue": "vuejs/vue#dev"
   }
 }

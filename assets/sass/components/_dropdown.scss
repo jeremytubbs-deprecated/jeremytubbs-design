@@ -4,6 +4,7 @@
   margin: auto;
 
   .dropdown-container {
+    z-index: 9995;
     display: inline-block;
     position: relative;
     text-align: left;
@@ -49,7 +50,7 @@
 
   .dropdown-menu li {
     border-bottom: $dropdown-inner-border;
-    color: $dropdown-color; 
+    color: $dropdown-color;
     list-style: none;
     padding: $dropdown-padding / 2;
   }

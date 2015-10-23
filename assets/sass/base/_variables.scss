@@ -1,5 +1,5 @@
 // Typography
-$base-font-family: $helvetica;
+$base-font-family: "Playfair Display","Raleway","Helvetica Neue",Arial,sans-serif;;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -10,7 +10,7 @@ $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
+$base-border-radius: 0;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
@@ -65,5 +65,14 @@ $dropdown-background-hover: darken($dropdown-background, 3%);
 $dropdown-inner-border: 1px solid rgba(0,0,0,0.1);
 $dropdown-height: 40px;
 $dropdown-padding: 1em;
-$dropdown-distance-from-menu: 61px;
-$dropdown-arrow-top-distance: 15px;
+$dropdown-distance-from-menu: 45px;
+$dropdown-arrow-top-distance: 0;
+
+// cards
+$card-border-color: $base-border-color;
+$card-border: 1px solid $card-border-color;
+$card-background: lighten($card-border-color, 10%);
+$card-header-background: $card-background;
+$card-margin: 1em;
+$card-image-hover-opacity: 0.7;
+$card-image-hover-color: $medium-gray;
