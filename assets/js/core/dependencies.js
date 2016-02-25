@@ -1,1 +1,2 @@
-window.$ = window.jQuery = require('jquery');
+require('./../vendor/openseadragon/openseadragon')
+require('./../vendor/openseadragon/openseadragon-viewerinputhook')
