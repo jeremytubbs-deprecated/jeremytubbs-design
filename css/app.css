@@ -1473,7 +1473,7 @@ th {
   left: 0;
   width: 24px;
   height: 2px;
-  background: #333;
+  background: #666;
   transition: background 0.3s, -webkit-transform 0.3s, top 0.3s;
   transition: background 0.3s, transform 0.3s, top 0.3s; }
   .burger:before {
@@ -1482,7 +1482,7 @@ th {
     left: 0;
     width: 24px;
     height: 2px;
-    background: #333;
+    background: #666;
     transition: background 0.3s, -webkit-transform 0.3s, top 0.3s;
     transition: background 0.3s, transform 0.3s, top 0.3s;
     top: -8px;
@@ -1494,7 +1494,7 @@ th {
     left: 0;
     width: 24px;
     height: 2px;
-    background: #333;
+    background: #666;
     transition: background 0.3s, -webkit-transform 0.3s, top 0.3s;
     transition: background 0.3s, transform 0.3s, top 0.3s;
     top: 8px;
@@ -1526,7 +1526,7 @@ th {
   -webkit-transform: translateX(-220px);
   transform: translateX(-220px);
   transition: all 0.25s linear;
-  background: #404040;
+  background: #737373;
   z-index: 998;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
@@ -1538,14 +1538,14 @@ th {
     .sliding-panel li:first-child {
       margin-top: 50px; }
   .sliding-panel li a {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #666;
     color: #fff;
     display: block;
     font-weight: bold;
     padding: 1em;
     text-decoration: none; }
     .sliding-panel li a:focus {
-      background-color: #4d4d4d; }
+      background-color: gray; }
     .sliding-panel li a:hover {
       background-color: #ddd;
       color: #fff; }
@@ -1654,5 +1654,16 @@ th {
   .logo h1 {
     font-weight: normal;
     font-size: 1.25em; }
+
+.reveal {
+  overflow: hidden; }
+
+.grow {
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out; }
+
+.grow:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
 
 /*# sourceMappingURL=app.css.map */
