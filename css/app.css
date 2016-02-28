@@ -1487,7 +1487,7 @@ th {
     transition: background 0.3s, transform 0.3s, top 0.3s;
     top: -8px;
     left: 0;
-    content: ""; }
+    content: ''; }
   .burger:after {
     position: absolute;
     top: 50%;
@@ -1499,7 +1499,7 @@ th {
     transition: background 0.3s, transform 0.3s, top 0.3s;
     top: 8px;
     left: 0;
-    content: ""; }
+    content: ''; }
 
 .burger--open .burger {
   -webkit-transform: translateX(220px);
@@ -1624,6 +1624,52 @@ th {
 .checkbox:checked ~ .wrapper {
   left: -17.5rem; }
 
+.plus {
+  margin-top: -2.5rem;
+  margin-left: 1rem;
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  content: '';
+  font-size: 0px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .plus:before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: -1px;
+    background: #FFF;
+    transition: all .3s ease; }
+  .plus:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    margin-left: -1px;
+    margin-top: -12px;
+    background: #FFF;
+    transition: all .3s ease; }
+
+a:hover .plus:before {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+a:hover .plus:after {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  opacity: 0; }
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -1663,7 +1709,7 @@ th {
   transition: transform .2s ease-in-out; }
 
 .grow:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1); }
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05); }
 
 /*# sourceMappingURL=app.css.map */

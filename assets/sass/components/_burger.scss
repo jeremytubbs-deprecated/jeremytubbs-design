@@ -30,13 +30,13 @@ $burger-color: #666;
     @include bun($burger-color);
     top: -8px;
     left: 0;
-    content: "";
+    content: '';
   }
   &:after {
     @include bun($burger-color);
     top: 8px;
     left: 0;
-    content: "";
+    content: '';
   }
 }
 
