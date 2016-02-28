@@ -27,3 +27,10 @@
   display: block;
   max-width: 100%;
 }
+
+@media #{$gl-xs}{
+	.masonry-sizer,
+	.masonry-item {
+	  width: 100%;
+	}
+}

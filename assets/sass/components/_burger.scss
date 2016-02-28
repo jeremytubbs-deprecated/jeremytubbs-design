@@ -5,7 +5,7 @@ $burger-color: #666;
   top: 50%;
   left: 0;
   width: 24px;
-  height: 2px;
+  height: 3px;
   background: $color;
   transition: background 0.3s, transform 0.3s, top 0.3s;
 }
@@ -13,7 +13,7 @@ $burger-color: #666;
 .burger-box {
   z-index: 1001;
   position: absolute;
-  top: 7px;
+  top: 12px;
   left: 1rem;
   display: block;
   width: 24px;
@@ -39,6 +39,8 @@ $burger-color: #666;
     content: '';
   }
 }
+
+
 
 .burger--open .burger {
   @include transform(translateX(220px));

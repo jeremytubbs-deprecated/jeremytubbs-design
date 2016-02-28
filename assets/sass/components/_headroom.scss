@@ -1,7 +1,7 @@
 .headroom {
   z-index: 1;
   background: $orange;
-  height: 40px;
+  height: 50px;
   position: fixed;
   top: 0;
   transition: top 0.2s ease-in-out;
@@ -12,5 +12,5 @@
   top: 0;
 }
 .headroom--unpinned {
-  top: -40px;
+  top: -50px;
 }

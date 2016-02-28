@@ -1416,7 +1416,7 @@ th {
 .headroom {
   z-index: 1;
   background: #ff9933;
-  height: 40px;
+  height: 50px;
   position: fixed;
   top: 0;
   transition: top 0.2s ease-in-out;
@@ -1426,7 +1426,7 @@ th {
   top: 0; }
 
 .headroom--unpinned {
-  top: -40px; }
+  top: -50px; }
 
 /* ---- grid ---- */
 .masonry {
@@ -1451,10 +1451,15 @@ th {
   display: block;
   max-width: 100%; }
 
+@media screen and (max-width: 35.5em) {
+  .masonry-sizer,
+  .masonry-item {
+    width: 100%; } }
+
 .burger-box {
   z-index: 1001;
   position: absolute;
-  top: 7px;
+  top: 12px;
   left: 1rem;
   display: block;
   width: 24px;
@@ -1472,7 +1477,7 @@ th {
   top: 50%;
   left: 0;
   width: 24px;
-  height: 2px;
+  height: 3px;
   background: #666;
   transition: background 0.3s, -webkit-transform 0.3s, top 0.3s;
   transition: background 0.3s, transform 0.3s, top 0.3s; }
@@ -1481,7 +1486,7 @@ th {
     top: 50%;
     left: 0;
     width: 24px;
-    height: 2px;
+    height: 3px;
     background: #666;
     transition: background 0.3s, -webkit-transform 0.3s, top 0.3s;
     transition: background 0.3s, transform 0.3s, top 0.3s;
@@ -1493,7 +1498,7 @@ th {
     top: 50%;
     left: 0;
     width: 24px;
-    height: 2px;
+    height: 3px;
     background: #666;
     transition: background 0.3s, -webkit-transform 0.3s, top 0.3s;
     transition: background 0.3s, transform 0.3s, top 0.3s;
@@ -1625,8 +1630,7 @@ th {
   left: -17.5rem; }
 
 .plus {
-  margin-top: -2.5rem;
-  margin-left: 1rem;
+  z-index: 3;
   position: absolute;
   display: block;
   width: 24px;
@@ -1682,8 +1686,13 @@ a:hover .plus:after {
     width: 95%; } }
 
 /* Temp Styles */
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll; }
+
 .reveal {
-  visibility: hidden; }
+  visibility: hidden;
+  overflow: hidden; }
 
 .disable-scroll {
   margin: 0;
@@ -1711,5 +1720,44 @@ a:hover .plus:after {
 .grow:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05); }
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400; }
+  .overlay .plus {
+    margin-top: 0.5rem;
+    margin-left: 1rem; }
+
+h6 {
+  font-size: 1rem; }
+
+.title-box {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -40px;
+  opacity: 0;
+  transition: all .2s ease;
+  background: #ff9933; }
+  .title-box .title {
+    font-weight: 700;
+    margin-left: 4rem;
+    margin-top: 0.7rem;
+    width: 100%;
+    height: 100%;
+    display: table; }
+
+a:hover .title-box {
+  bottom: 0;
+  opacity: 1; }
+
+.overflow {
+  margin-top: -1rem; }
 
 /*# sourceMappingURL=app.css.map */
