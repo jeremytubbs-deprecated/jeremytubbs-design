@@ -12,7 +12,10 @@ html {
   overflow-y: scroll;
 }
 
-.reveal { visibility: hidden; overflow: hidden; }
+.reveal {
+  visibility: hidden;
+  overflow: hidden;
+}
 
 .disable-scroll {
   margin: 0;
@@ -44,57 +47,3 @@ html {
   height: 70vh;
 }
 
-.grow {
-  transition: transform .2s ease-in-out;
-}
-.grow:hover {
-  transform: scale(1.05);
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 400;
-  .plus {
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-  }
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-.title-box {
-  z-index: 2;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: -40px;
-  opacity: 0;
-  transition: all .2s ease;
-  background: $orange;
-  .title {
-    font-weight: 700;
-    margin-left: 4rem;
-    margin-top: 0.7rem;
-    width: 100%;
-    height: 100%;
-    display: table;
-  }
-}
-
-a:hover {
-  .title-box {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-.overflow {
-  margin-top: -1rem;
-}
