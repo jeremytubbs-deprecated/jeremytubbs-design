@@ -16,6 +16,7 @@
   "dependencies": {
     "bourbon": "^4.2.6",
     "imagesloaded": "^4.1.0",
+    "lory.js": "^2.0.1",
     "masonry-layout": "^4.0.0",
     "scrollreveal": "^3.0.9"
   }

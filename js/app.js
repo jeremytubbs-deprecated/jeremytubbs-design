@@ -93,6 +93,15 @@ require('./../vendor/openseadragon/openseadragon-viewerinputhook');
 var osd_viewer = null;
 enableSeadragon();
 
+var osd_thumb = document.querySelector('.osd-thumb');
+if (osd_thumb) {
+  osd_thumb.addEventListener('click', function (e) {
+    e.preventDefault();
+    var osd_source = osd_thumb.getAttribute('data-osd');
+    enableSeadragon(osd_source);
+  });
+}
+
 function enableSeadragon(osd_source) {
   if (!osd_viewer) {
     var container = document.querySelector('#osd-container');
