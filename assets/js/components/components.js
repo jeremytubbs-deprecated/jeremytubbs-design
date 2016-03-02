@@ -1,4 +1,4 @@
-require('./burger');
-require('./headroom');
-require('./masonry');
-require('./openseadragon');
+require('./burger')
+require('./headroom')
+require('./masonry')
+require('./openseadragon')
