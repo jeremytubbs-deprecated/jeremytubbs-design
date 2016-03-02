@@ -28,6 +28,11 @@
   max-width: 100%;
 }
 
+.reveal {
+  visibility: hidden;
+  overflow: hidden;
+}
+
 @media #{$gl-xs}{
 	.masonry-sizer,
 	.masonry-item {

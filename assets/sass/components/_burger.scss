@@ -40,10 +40,8 @@ $burger-color: #666;
   }
 }
 
-
-
 .burger--open .burger {
-  @include transform(translateX(220px));
+  //@include transform(translateX(220px));
   @include transition(all 0.25s linear);
   background: transparent;
   &:before {
@@ -55,4 +53,10 @@ $burger-color: #666;
     top: 0;
     transform: rotateZ(45deg);
   }
+}
+
+body.disable-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }

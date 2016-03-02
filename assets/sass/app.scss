@@ -3,47 +3,8 @@
 @import "node_modules/bourbon/app/assets/stylesheets/bourbon";
 @import "vendor/gridlex-vars.scss";
 @import "vendor/gridlex";
+@import "base/base";
 @import "components/components";
 @import "layout/layout";
 
 /* Temp Styles */
-html {
-  overflow: -moz-scrollbars-vertical;
-  overflow-y: scroll;
-}
-
-.reveal {
-  visibility: hidden;
-  overflow: hidden;
-}
-
-.disable-scroll {
-  margin: 0;
-  height: 100%;
-  overflow: hidden
-}
-
-.logo {
-  width: 100%;
-  text-align: right;
-  margin-right: 1rem;
-  a {
-    text-decoration: none;
-    color: #333;
-  }
-  h1 {
-    font-weight: normal;
-    font-size: $base-font-size * 1.25;
-  }
-}
-
-.reveal {
-  overflow: hidden;
-}
-
-.header-image {
-  padding-top: 50px;
-  width: 100%;
-  height: 70vh;
-}
-
