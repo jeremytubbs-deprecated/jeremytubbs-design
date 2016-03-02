@@ -63,11 +63,11 @@ var grid = document.querySelector('.masonry');
 //     itemSelector: '.masonry-item',
 //     columnWidth: '.masonry-sizer',
 //     percentPosition: true
-// });
+// })
 // new imagesLoaded( grid, function() {
 //   // layout Masonry after each image loads
-//   msnry.layout();
-// });
+//   msnry.layout()
+// })
 /* end show layout animation */
 
 /* wait for imagesloaded */

@@ -1727,9 +1727,9 @@ a:hover .plus:after {
     height: 24px;
     width: 24px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.5); }
+    background-color: rgba(255, 255, 255, 0.75); }
     #osd-controls ul li:hover {
-      background-color: rgba(255, 255, 255, 0.25); }
+      background-color: rgba(255, 255, 255, 0.5); }
     #osd-controls ul li a {
       margin-top: 4px; }
 
