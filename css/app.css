@@ -1415,7 +1415,7 @@ th {
 
 .headroom {
   z-index: 1;
-  background: #ff9933;
+  background: #fff;
   height: 50px;
   position: fixed;
   top: 0;
@@ -1427,6 +1427,9 @@ th {
 
 .headroom--unpinned {
   top: -50px; }
+
+.headroom--top {
+  background: none; }
 
 /* ---- grid ---- */
 .masonry {
@@ -1674,6 +1677,62 @@ a:hover .plus:after {
   transform: rotate(-90deg);
   opacity: 0; }
 
+@font-face {
+  font-family: 'osd';
+  src: url("fonts/osd.eot?8ik60");
+  src: url("fonts/osd.eot?8ik60#iefix") format("embedded-opentype"), url("fonts/osd.ttf?8ik60") format("truetype"), url("fonts/osd.woff?8ik60") format("woff"), url("fonts/osd.svg?8ik60#osd") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'osd' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-zoom-in:before {
+  content: "\e145"; }
+
+.icon-fullscreen:before {
+  content: "\e5d0"; }
+
+.icon-zoom-out:before {
+  content: "\e15b"; }
+
+.icon-fullscreen_alt:before {
+  content: "\e8c4"; }
+
+.icon-center_focus:before {
+  content: "\e900"; }
+
+#osd-container {
+  width: auto;
+  height: inherit; }
+
+#osd-controls .stacked {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem; }
+
+#osd-controls ul {
+  list-style: none; }
+  #osd-controls ul li {
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); }
+    #osd-controls ul li:hover {
+      background-color: rgba(255, 255, 255, 0.25); }
+    #osd-controls ul li a {
+      margin-top: 4px; }
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -1712,6 +1771,11 @@ html {
 
 .reveal {
   overflow: hidden; }
+
+.header-image {
+  padding-top: 50px;
+  width: 100%;
+  height: 70vh; }
 
 .grow {
   transition: -webkit-transform .2s ease-in-out;

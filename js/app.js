@@ -4,7 +4,7 @@
 require('./core/dependencies');
 require('./components/components');
 
-},{"./components/components":3,"./core/dependencies":6}],2:[function(require,module,exports){
+},{"./components/components":3,"./core/dependencies":7}],2:[function(require,module,exports){
 'use strict';
 
 var burgerBox = document.querySelector('.burger-box');
@@ -34,8 +34,9 @@ screenOverlay.addEventListener('click', function (e) {
 require('./burger');
 require('./headroom');
 require('./masonry');
+require('./openseadragon');
 
-},{"./burger":2,"./headroom":4,"./masonry":5}],4:[function(require,module,exports){
+},{"./burger":2,"./headroom":4,"./masonry":5,"./openseadragon":6}],4:[function(require,module,exports){
 "use strict";
 
 require('./../vendor/headroom');
@@ -47,7 +48,7 @@ var headroom = new Headroom(myElement);
 // initialise
 headroom.init();
 
-},{"./../vendor/headroom":7}],5:[function(require,module,exports){
+},{"./../vendor/headroom":8}],5:[function(require,module,exports){
 'use strict';
 
 var Masonry = require('masonry-layout');
@@ -83,13 +84,54 @@ new imagesLoaded(grid, function () {
 });
 /* end wait for images loaded */
 
-},{"imagesloaded":14,"masonry-layout":15,"scrollreveal":18}],6:[function(require,module,exports){
+},{"imagesloaded":15,"masonry-layout":16,"scrollreveal":19}],6:[function(require,module,exports){
 'use strict';
 
 require('./../vendor/openseadragon/openseadragon');
 require('./../vendor/openseadragon/openseadragon-viewerinputhook');
 
-},{"./../vendor/openseadragon/openseadragon":9,"./../vendor/openseadragon/openseadragon-viewerinputhook":8}],7:[function(require,module,exports){
+var osd_viewer = null;
+enableSeadragon();
+
+function enableSeadragon(osd_source) {
+  if (!osd_viewer) {
+    var container = document.querySelector('#osd-container');
+    var osd_source = container.getAttribute('data-osd');
+    osd_viewer = OpenSeadragon({
+      id: 'osd-container',
+      tileSources: osd_source,
+      prefixUrl: '/images/openseadragon/images/',
+      toolbar: 'osd-controls',
+      zoomInButton: 'osd-in',
+      zoomOutButton: 'osd-out',
+      fullPageButton: 'osd-full',
+      homeButton: 'osd-home'
+    });
+    // disable the scroll handler to enable page scrolling inside the viewer area
+    osd_viewer.addViewerInputHook({ hooks: [{ tracker: 'viewer', handler: 'scrollHandler', hookHandler: onViewerScroll }] });
+    // zoom in a bit on image load
+    osd_viewer.addHandler('open', function () {
+      var zoom = osd_viewer.viewport.getZoom();
+      osd_viewer.viewport.zoomTo(zoom + 0.2, null, true);
+    });
+  } else {
+    osd_viewer.open(osd_source);
+  }
+}
+
+function onViewerScroll(event) {
+  // Disable mousewheel zoom on the viewer and let the original mousewheel events bubble
+  if (!osd_viewer.isFullPage()) {
+    event.preventDefaultAction = true;
+    event.stopHandlers = true;
+    return true;
+  }
+}
+
+},{"./../vendor/openseadragon/openseadragon":10,"./../vendor/openseadragon/openseadragon-viewerinputhook":9}],7:[function(require,module,exports){
+"use strict";
+
+},{}],8:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -467,7 +509,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   window.Headroom = Headroom;
 })(window, document);
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 //! OpenSeadragonViewerInputHook 1.1.0
@@ -604,7 +646,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     };
 })(OpenSeadragon, window.OpenSeadragonImaging = window.OpenSeadragonImaging || {});
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;}; //! OpenSeadragon 2.1.0
 //! Built on 2015-11-12
 //! Git commit: v2.1.0-3-b2c17b5
@@ -7266,7 +7308,7 @@ _raiseRemoveItem:function _raiseRemoveItem(item){ /**
          * @property {?Object} userData - Arbitrary subscriber-defined object.
          */this.raiseEvent('remove-item',{item:item});}});})(OpenSeadragon);
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /**
  * matchesSelector v2.0.1
  * matchesSelector( element, '.selector' )
@@ -7321,7 +7363,7 @@ _raiseRemoveItem:function _raiseRemoveItem(item){ /**
 
 }));
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /**
  * EvEmitter v1.0.2
  * Lil' event emitter
@@ -7432,7 +7474,7 @@ return EvEmitter;
 
 }));
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /**
  * Fizzy UI utils v2.0.1
  * MIT license
@@ -7669,7 +7711,7 @@ return utils;
 
 }));
 
-},{"desandro-matches-selector":10}],13:[function(require,module,exports){
+},{"desandro-matches-selector":11}],14:[function(require,module,exports){
 /*!
  * getSize v2.0.2
  * measure size of elements
@@ -7880,7 +7922,7 @@ return getSize;
 
 });
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /*!
  * imagesLoaded v4.1.0
  * JavaScript is all like "You images are done yet or what?"
@@ -8252,7 +8294,7 @@ return ImagesLoaded;
 
 });
 
-},{"ev-emitter":11}],15:[function(require,module,exports){
+},{"ev-emitter":12}],16:[function(require,module,exports){
 /*!
  * Masonry v4.0.0
  * Cascading grid layout library
@@ -8459,7 +8501,7 @@ return ImagesLoaded;
 
 }));
 
-},{"get-size":13,"outlayer":17}],16:[function(require,module,exports){
+},{"get-size":14,"outlayer":18}],17:[function(require,module,exports){
 /**
  * Outlayer Item
  */
@@ -9001,7 +9043,7 @@ return Item;
 
 }));
 
-},{"ev-emitter":11,"get-size":13}],17:[function(require,module,exports){
+},{"ev-emitter":12,"get-size":14}],18:[function(require,module,exports){
 /*!
  * Outlayer v2.0.1
  * the brains and guts of a layout library
@@ -9900,7 +9942,7 @@ return Outlayer;
 
 }));
 
-},{"./item":16,"ev-emitter":11,"fizzy-ui-utils":12,"get-size":13}],18:[function(require,module,exports){
+},{"./item":17,"ev-emitter":12,"fizzy-ui-utils":13,"get-size":14}],19:[function(require,module,exports){
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
