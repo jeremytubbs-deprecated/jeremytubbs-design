@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/app.css">
+  <script src='/js/vendor/intense.min.js' async></script>
+</head>
+<body>
+  <header class="grid-middle-noGutter-equalHeight headroom">
+    <div class="col">
+      <a href="#" class="burger-box">
+        <div class="burger">
+          Menu
+        </div>
+      </a>
+    </div>
+    <div class="col">
+      <div class="logo">
+        <a href="/">
+          <h1>Jeremy Tubbs</h1>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sliding-panel sliding-panel--right" role="navigation">
+    <ul>
+      <li><a href="#">Item 1</a></li>
+      <li><a href="#">Item 2</a></li>
+      <li><a href="#">Item 3</a></li>
+    </ul>
+  </nav>
+
+  <div class="screen-overlay"></div>
+
+  <main class="container">
+    <br><br>
+    <h1>Project Title</h1>
+
+    <p></p>
+
+    <div class="grid gallery">
+      <div class="gallery-sizer"></div>
+        <div class="col gallery-item">
+          <div class="reveal">
+            <a>
+              <img class="grow intense" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+            </a>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+  window.onload = function() {
+      var elements = document.querySelectorAll( '.intense' );
+      Intense( elements );
+  }
+  </script>
+</body>
+</html>
